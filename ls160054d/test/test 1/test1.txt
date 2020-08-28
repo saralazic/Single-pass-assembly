@@ -1,0 +1,28 @@
+.global a, c
+.extern b, f
+.text
+jeq a
+jeq e
+jeq b
+jeq d
+jeq m
+d: .word d
+mov $b, %r0
+mov %r0, c
+mov $e, %r0
+.data
+.equ y, sara
+m: .byte c
+.skip 8
+e: .word a
+.word c
+.equ z, y-8
+.word bss
+a: .word b
+.bss
+.equ x, a+7-c+0x76
+.equ sara, x+2
+c: .skip 8
+
+
+.end
